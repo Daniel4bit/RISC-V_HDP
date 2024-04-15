@@ -16,8 +16,8 @@ This C program, designed for wearable health monitoring, accepts input from a te
 ![adc](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/fcf3ed61-966d-44d1-beed-f04129e50c1f)
 
 ### C-Code
+```
 #include <stdio.h>
-'''
 // Function to display a digit on a seven-segment display
 void displayDigit(int digit) {
     // Define patterns for each digit
@@ -65,6 +65,6 @@ int main() {
 
     return 0;
 }
-'''
+```
 
 
