@@ -15,6 +15,56 @@ This C program, designed for wearable health monitoring, accepts input from a te
 ### Blockdiagram
 ![adc](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/fcf3ed61-966d-44d1-beed-f04129e50c1f)
 
+### C-Code
+#include <stdio.h>
+'''
+// Function to display a digit on a seven-segment display
+void displayDigit(int digit) {
+    // Define patterns for each digit
+    const int patterns[10][7] = {
+        {1, 1, 1, 1, 1, 1, 0},  // 0
+        {0, 1, 1, 0, 0, 0, 0},  // 1
+        {1, 1, 0, 1, 1, 0, 1},  // 2
+        {1, 1, 1, 1, 0, 0, 1},  // 3
+        {0, 1, 1, 0, 0, 1, 1},  // 4
+        {1, 0, 1, 1, 0, 1, 1},  // 5
+        {1, 0, 1, 1, 1, 1, 1},  // 6
+        {1, 1, 1, 0, 0, 0, 0},  // 7
+        {1, 1, 1, 1, 1, 1, 1},  // 8
+        {1, 1, 1, 0, 0, 1, 1}   // 9
+    };
 
+    printf("Displaying digit: %d\n", digit);
+    printf("Segment pattern: ");
+    for (int i = 0; i < 7; i++) {
+        printf("%d ", patterns[digit][i]);
+    }
+    printf("\n");
+    // Here you would write code to drive your seven-segment display using these individual bits
+}
+
+int main() {
+    int input[4];
+
+    // Accept inputs
+    printf("Enter 4 boolean inputs (0 or 1) representing temperature sensor outputs:\n");
+    for (int i = 0; i < 4; ++i) {
+        printf("Input %d: ", i + 1);
+        scanf("%d", &input[i]);
+    }
+
+    // Convert binary input to decimal
+    int digit = input[0] * 8 + input[1] * 4 + input[2] * 2 + input[3];
+
+    // Display the digit on the seven-segment display
+    if (digit >= 0 && digit <= 9) {
+        displayDigit(digit);
+    } else {
+        printf("Invalid input. Please enter a 4-bit binary number.\n");
+    }
+
+    return 0;
+}
+'''
 
 
