@@ -13,7 +13,8 @@ This C program, designed for wearable health monitoring, accepts input from a te
 
 
 ### Blockdiagram
+![adc](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/fcf3ed61-966d-44d1-beed-f04129e50c1f)
 
-![Screenshot 2024-04-10 175423](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/81b564ec-3213-4380-8117-0d6afafa9971)
+
 
 
