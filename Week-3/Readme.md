@@ -66,5 +66,18 @@ int main() {
     return 0;
 }
 ```
+##Register architecture of x30 for GPIOs
++Input Signals - Sensor1, Sensor2, Sensor3;
+
++Output Signals - Motor1A, Motor1B, Motor2A, Motor2B;
+
++Number of Register bits Required - 7
+
++Register bits allocations are given below
+
++x30 [2:0] is Adc - Adc 1 - x30[0]; Adc 2 - x30[1]; Adc 3 - x30[2]; Adc 4 - x30[3]; // Input - Read
+
++x30 [10:4] is e1 & e7 - e1 x30 [4] ; e2 x30 [5] ; e3 x30 [6] ;e4 x30 [7] ;e5 x30 [8] ;e6 x30 [9] ;e7 x30 [9] ;// Output Write
+
 
 
