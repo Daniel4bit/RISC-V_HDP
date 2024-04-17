@@ -1,9 +1,11 @@
+# Inline Assembly Code
+
 ```
 #include <stdio.h>
+
 // Function to display a digit on a seven-segment display
 void displayDigit(int digit) {
     // Define patterns for each digit
-
     const int patterns[10][7] = {
         {1, 1, 1, 1, 1, 1, 0},  // 0
         {0, 1, 1, 0, 0, 0, 0},  // 1
@@ -21,36 +23,21 @@ void displayDigit(int digit) {
     printf("Segment pattern: ");
     for (int i = 0; i < 7; i++) {
         printf("%d ", patterns[digit][i]);
-asm volatile(
-		"and x30,x30,%1\n\t"
-	    	"li x30, patterns[digit][i] \n\t "
-             ori %0, x30 \n\t "
-	    	:
-	    	:"=r"(digit[i]),"r"(mask)
-	    	:"x30"
-	    	);
-
     }
     printf("\n");
-    // Here you would write code to drive your seven-segment display using these individual bits
 }
 
 int main() {
     int input[4];
+    int mask = 0xFFFFF800; // Define mask for inputs
 
     // Accept inputs
     printf("Enter 4 boolean inputs (0 or 1) representing temperature sensor outputs:\n");
-  int mask=0xFFFFF800;
     for (int i = 0; i < 4; ++i) {
         printf("Input %d: ", i + 1);
-        asm volatile(
-		"and x30,x30,%1\n\t"
-	    	"or x30, x30, %0\n\t"
-	    	:
-	    	:"r"(input[i]),"r"(mask)
-	    	:"x30"
-	    	);
-  }
+        scanf("%d", &input[i]);
+        input[i] &= mask; // Apply the mask to input
+    }
 
     // Convert binary input to decimal
     int digit = input[0] * 8 + input[1] * 4 + input[2] * 2 + input[3];
@@ -64,6 +51,7 @@ int main() {
 
     return 0;
 }
+
 ```
 ## Assembly inline Simulation Command
 **+ RISCV Compiler**
