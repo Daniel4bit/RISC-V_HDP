@@ -1,4 +1,4 @@
-Commands to do iverilog Simulation
+# Commands to do iverilog Simulation
 ```
 iverilog -o Wearable_v testbench.v processor.v
 vvp Wearable_v
