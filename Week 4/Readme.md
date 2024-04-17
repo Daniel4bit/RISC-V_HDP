@@ -79,28 +79,6 @@ spike pk maze_assemblyinline.o
 riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -o out maze_assemblyinline.c
 riscv64-unknown-elf-objdump -d  -r out > maze1.txt
 ```
-```
 
-## List of Unique Instruction
-
-Number of different instructions:15
-List of unique instructions:
-sw
-blt
-lw
-bge
-slli
-jal
-addi
-nop
-j
-and
-li
-bltz
-add
-ret
-mv
-
-##.JSON
 
 
