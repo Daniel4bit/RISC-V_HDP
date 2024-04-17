@@ -68,7 +68,7 @@ int main() {
 ## Assembly inline Simulation Command
 **+ RISCV Compiler**
 ```
-riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o ./maze_assemblyinline.o maze_assemblyinline.c
+riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 -ffreestanding -o ./Wearable_assemblyinline.o Wearable_assemblyinline.c
 spike pk maze_assemblyinline.o
 
 ```
@@ -76,8 +76,8 @@ spike pk maze_assemblyinline.o
 
 ## Assembly.txt file generation
 ```
-riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -o out maze_assemblyinline.c
-riscv64-unknown-elf-objdump -d  -r out > maze1.txt
+riscv64-unknown-elf-gcc -march=rv32i -mabi=ilp32 -ffreestanding -nostdlib -o out Wearable_assemblyinline_textgen.c
+riscv64-unknown-elf-objdump -d  -r out > Wearable.txt
 ```
 
 
