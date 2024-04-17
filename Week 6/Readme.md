@@ -28,3 +28,6 @@ show wrapper
 ### Schematic
 ![RTL Schematic](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/6c5070b6-6f6b-45c4-aba4-4b3a74744756)
 
+# GateLevel Simulation Output
+
+![Gatelevel Simulation](https://github.com/Daniel4bit/RISC-V_HDP/assets/65249875/8ec7c5a9-9a35-4480-8e77-abc7f9a3d4b6)
